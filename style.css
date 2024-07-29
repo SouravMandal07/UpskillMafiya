@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensure no scrollbars */
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    width: 50vw;
+    height: 80vh;
+    margin: 10vh auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button {
+    width: 100%;
+    padding: 15px 0;
+    background: linear-gradient(to right, orange, green);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0;
+}
