@@ -1,36 +1,39 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Ensure no scrollbars */
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 .container {
+    width: 50vw;
+    height: 80vh;
+    margin: 10vh auto;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
 }
 
-.item {
-    position: absolute;
-    background-color: transparent;
-    width: calc(var(--i) * 25px);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 5px solid rgb(0, 200, 255);
-    transform: rotateX(70deg);
-    animation: my-move 3s ease-in-out calc(var(--i) * 0.08s) infinite;
-    box-shadow: 0px 0px 15px rgb(74, 227, 77), inset 0px 0px 15px rgb(255, 25, 25);
+.image {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-@keyframes my-move {
-    0%, 100% {
-        transform: rotateX(70deg) translateY(0px);
-        filter: hue-rotate(0deg);
-    }
-    50% {
-        transform: rotateX(70deg) translateY(-400px);
-        filter: hue-rotate(180deg);
-    }
+.button {
+    width: 100%vw;
+    padding: 1vw 0;
+    background: linear-gradient(to right, orange, green);
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0;
 }
