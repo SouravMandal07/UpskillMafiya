@@ -1,39 +1,104 @@
-html, body {
-    height: 100%;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ensure no scrollbars */
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-.container {
-    width: 50vw;
+/* Navigation Bar */
+nav {
+    display: inline-block;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 15px 30px;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: inline-block;
+    list-style: none;
+    margin-left: 30px;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.username {
+    float: right;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    display: inline-block;
+    width: 100%;
     height: 80vh;
-    margin: 10vh auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #f0f8ff;
+    padding: 60px 30px;
 }
 
-.image {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.hero-content {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    z-index: 2;
 }
 
-.button {
-    width: 100%vw;
-    padding: 1vw 0;
-    background: linear-gradient(to right, orange, green);
-    color: white;
-    font-size: 2vw;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 0;
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #007bff;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.hero-image {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    z-index: 1;
 }
