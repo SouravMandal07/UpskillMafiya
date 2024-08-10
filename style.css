@@ -12,26 +12,25 @@ body {
 
 /* Navigation Bar */
 nav {
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background-color: #f8f8f8;
     padding: 15px 30px;
 }
 
 .logo {
-    float: left;
     font-size: 24px;
     font-weight: bold;
 }
 
 .nav-links {
-    display: inline-block;
+    display: flex;
     list-style: none;
-    margin-left: 30px;
 }
 
 .nav-links li {
-    display: inline;
     margin-right: 20px;
 }
 
@@ -42,24 +41,23 @@ nav {
 }
 
 .username {
-    float: right;
     font-size: 16px;
 }
 
 /* Hero Section */
 .hero {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background-color: #f0f8ff;
     padding: 60px 30px;
 }
 
 .hero-content {
-    display: inline-block;
-    width: 50%;
-    vertical-align: top;
-    z-index: 2;
+    flex: 1;
+    margin-right: 20px;
 }
 
 .hero-content h1 {
@@ -78,7 +76,6 @@ nav {
 }
 
 .btn {
-    display: inline-block;
     padding: 15px 30px;
     background-color: #007bff;
     color: #fff;
@@ -88,17 +85,90 @@ nav {
 }
 
 .hero-image {
-    display: inline-block;
-    width: 70%;
-    vertical-align: top;
+    flex: 1;
     text-align: right;
 }
 
 .hero-image img {
-    max-width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50px;
-    right: 40px;
-    z-index: 1;
+    max-width: 90%;
+    height: auto;
 }
+
+/* Media Query for iPad Mini (768px width) */
+@media only screen and (max-width: 768px) {
+    /* Navigation Bar Adjustments */
+    .logo {
+        font-size: 18px; /* Reduced size for logo */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Reduced size for navigation links */
+    }
+
+    .username {
+        font-size: 14px; /* Reduced size for username */
+    }
+
+  
+}
+
+@media only screen and (max-width: 375px) {
+    /* Navigation Bar Adjustments */
+    .nav-links {
+        display: none; /* Hide anchor links */
+    }
+
+    .logo, .username {
+        font-size: 16px; /* Adjust font size for logo and username */
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        display: flex;
+        flex-direction: column; /* Stack text and button on top, image at the bottom */
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh; /* Full viewport height */
+        padding: 10px 15px; /* Reduced padding */
+        overflow: hidden; /* Ensure no scroll bar */
+        
+    }
+
+    .hero-content {
+        order: 1; /* Ensure text and button are on top */
+        text-align: center;
+        margin-bottom: 10px; /* Adjust margin to fit content */
+        max-height: 30%;
+    }
+
+    .hero-content h1 {
+        font-size: 24px; /* Smaller heading size */
+        margin-bottom: 10px; /* Adjust margin to fit content */
+    }
+
+    .hero-content p {
+        font-size: 14px; /* Smaller paragraph size */
+        margin-bottom: 10px; /* Adjust margin to fit content */
+    }
+
+    .btn {
+        padding: 8px 12px; /* Adjusted button padding */
+        font-size: 14px; /* Smaller button size */
+    }
+
+    .hero-image {
+        order: 2; /* Ensure the image is at the bottom */
+        width: 100%;
+        max-height: 60%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 70%; /* Adjust image size */
+        height: auto;
+    }
+}
+
+
+
+
